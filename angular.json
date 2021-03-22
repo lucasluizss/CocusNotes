@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": true,
+          "inlineTemplate": false,
           "inlineStyle": true,
           "skipTests": true
         },
@@ -35,7 +35,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "cn",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -51,9 +51,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/material-design-lite/material.min.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/material-design-lite/material.min.js"]
           },
           "configurations": {
             "production": {
@@ -104,6 +105,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "CocusNotes"
+    }
+  },
+  "defaultProject": "CocusNotes",
+  "cli": {
+    "analytics": "d61c398b-d0b9-4524-aa7b-26fac3c58891"
+  }
 }

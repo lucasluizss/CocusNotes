@@ -1,0 +1,54 @@
+<h4>{{ note ? 'Edit' : 'New' }} note:</h4>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+	<div class="mdl-grid mdl-grid--no-spacing">
+		<div class="mdl-cell mdl-cell--12-col">
+			<div class="mdl-grid">
+				<div
+					class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+				>
+					<input
+						class="mdl-textfield__input"
+						type="text"
+						id="title"
+						formControlName="title"
+					/>
+					<label class="mdl-textfield__label" for="title">Title</label>
+				</div>
+			</div>
+			<div class="mdl-grid">
+				<div class="mdl-textfield mdl-js-textfield">
+					<textarea
+						class="mdl-textfield__input"
+						formControlName="description"
+						placeholder="Description"
+						type="text"
+						rows="5"
+						id="description"
+					></textarea>
+				</div>
+			</div>
+			<div class="mdl-grid">
+				<button
+					id="btn-add"
+					class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
+					type="submit"
+				>
+					<i *ngIf="!note" id="add" class="material-icons">add</i>
+					<i *ngIf="note" id="edit" class="material-icons">update</i>
+				</button>
+				<div class="mdl-tooltip" data-mdl-for="btn-add">
+					{{ note ? 'Edit' : 'Add' }}
+				</div>
+				<button
+					*ngIf="note"
+					id="btn-cancel"
+					class="mdl-button mdl-js-button mdl-button--fab"
+					(click)="reset()"
+				>
+					<i id="add" class="material-icons">close</i>
+				</button>
+				<div class="mdl-tooltip" data-mdl-for="btn-cancel">Cancel</div>
+			</div>
+		</div>
+	</div>
+</form>

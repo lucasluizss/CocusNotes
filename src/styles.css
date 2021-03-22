@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+.mdl-grid.center-items {
+	justify-content: center;
+}
+
+.extrawide {
+	width: 100%;
+}
+
+td {
+	word-wrap: break-word;
+	max-width: 150px;
+}
+table {
+	table-layout: fixed;
+}
+
+.table-header div.mdl-textfield {
+	position: absolute;
+	right: 10px;
+	z-index: 9999;
+	width: 100%;
+}
+
+label.input-custom-file input[type=file] {
+  display: none;
+}

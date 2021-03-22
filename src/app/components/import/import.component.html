@@ -1,0 +1,16 @@
+<label
+	for="import-input"
+	id="import"
+	class="input-custom-file mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"
+>
+	<i class="material-icons">upload</i>
+	<input
+		#csvReader
+		type="file"
+		(change)="uploadListener($event)"
+		name="import-input"
+		id="import-input"
+		accept=".csv"
+	/>
+</label>
+<div class="mdl-tooltip" data-mdl-for="import">Import</div>

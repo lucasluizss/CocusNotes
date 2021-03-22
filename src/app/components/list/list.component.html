@@ -1,0 +1,85 @@
+&nbsp;
+<button
+	(click)="export('PDF')"
+	id="PDF"
+	class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"
+>
+	<i class="material-icons">picture_as_pdf</i>
+</button>
+<div class="mdl-tooltip" data-mdl-for="PDF">Get PDF</div>
+&nbsp;
+<button
+	(click)="export('PRINT')"
+	id="PRINT"
+	class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"
+>
+	<i class="material-icons">print</i>
+</button>
+<div class="mdl-tooltip" data-mdl-for="PRINT">PRINT</div>
+&nbsp;
+<button
+	(click)="export()"
+	id="OPEN"
+	class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"
+>
+	<i class="material-icons">open_in_new</i>
+</button>
+<div class="mdl-tooltip" data-mdl-for="OPEN">Open</div>
+&nbsp;
+<button
+	(click)="export('CSV')"
+	id="CSV"
+	class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"
+>
+	<i class="material-icons">download</i>
+</button>
+<div class="mdl-tooltip" data-mdl-for="CSV">Export to CSV</div>
+&nbsp;
+<cn-import></cn-import>
+&nbsp;
+
+<ul class="mdl-list">
+	<li
+		*ngFor="let item of data"
+		class="mdl-list__item mdl-list__item--three-line"
+	>
+		<span class="mdl-list__item-primary-content">
+			<i class="material-icons mdl-list__item-avatar">person</i>
+			<span>{{ item.title }}</span>
+			<span class="mdl-list__item-text-body">
+				{{ item.description | shorten: maxLength:'...' }}
+				<div
+					*ngIf="item.description.length > maxLength"
+					(click)="showAll(item)"
+				>
+					Read More
+				</div>
+			</span>
+		</span>
+		<span class="mdl-list__item-secondary-content">
+			<span class="mdl-list__item-secondary-info">{{
+				item.updatedAt | dateAgo
+			}}</span>
+		</span>
+		<span class="mdl-list__item-secondary-content">
+			<a
+				(click)="edit(item)"
+				id="edit"
+				class="mdl-list__item-secondary-action"
+				href="#"
+				><i class="material-icons">edit</i></a
+			>
+			<div class="mdl-tooltip" data-mdl-for="edit">Edit</div>
+		</span>
+		<span class="mdl-list__item-secondary-content">
+			<a
+				(click)="delete(item.id)"
+				id="delete"
+				class="mdl-list__item-secondary-action"
+				href="#"
+				><i class="material-icons">delete</i></a
+			>
+			<div class="mdl-tooltip" data-mdl-for="delete">Delete</div>
+		</span>
+	</li>
+</ul>
