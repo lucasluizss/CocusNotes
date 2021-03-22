@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import NoteModel from 'src/app/models/note.model';
 import { NotesService } from 'src/app/services/notes.service';
@@ -9,7 +9,7 @@ import { NotificationService } from 'src/app/services/notification.service';
 	templateUrl: './import.component.html',
 })
 export class ImportComponent {
-	@ViewChild('csvReader') csvReader: any;
+	@ViewChild('csvReader') csvReader: ElementRef;
 
 	constructor(
 		private readonly notesService: NotesService,

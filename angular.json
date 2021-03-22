@@ -54,7 +54,10 @@
               "src/styles.css",
               "node_modules/material-design-lite/material.min.css"
             ],
-            "scripts": ["node_modules/material-design-lite/material.min.js"]
+            "scripts": [
+              "node_modules/material-design-lite/material.min.js"
+            ],
+            "allowedCommonJsDependencies": ["rxjs-compat"]
           },
           "configurations": {
             "production": {
@@ -103,12 +106,20 @@
           "options": {
             "browserTarget": "CocusNotes:build"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://lucasluizss.github.io/CocusNotes/",
+            "name": "Lucas",
+            "email": "lucasluizss@live.com"
+          }
         }
       }
     }
   },
   "defaultProject": "CocusNotes",
   "cli": {
-    "analytics": "d61c398b-d0b9-4524-aa7b-26fac3c58891"
+    "analytics": false
   }
 }
